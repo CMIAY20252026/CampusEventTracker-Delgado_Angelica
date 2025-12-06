@@ -1,12 +1,46 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Stackblitz Angular Starter Template</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 <body>
-  <app-root></app-root>
+<main class="container">
+<h1>Campus Event Tracker</h1>
+</body>
+
+<section class="card form-card">
+<h2>Add Event</h2>
+<form id="event-form">
+<div class="row">
+<label>Title<input id="title" required maxlength="80"/></label>
+<label>Date<input id="date" type="date" required/></label>
+</div>
+<div class="row">
+<label>Location<input id="location"/></label>
+</div>
+<div class="row">
+<label>Description<textarea id="description" rows="3"></textarea></label>
+</div>
+<div class="actions">
+<button type="submit">Add Event</button>
+<button type="button" id="clear-btn" class="muted">Clear</button>
+
+</div>
+</form>
+</section>
+
+<section class="card list-card">
+<div class="list-header">
+<h2>Upcoming Events</h2>
+<div>
+<select id="filter">
+<option value="all">All</option>
+<option value="upcoming">Upcoming</option>
+<option value="past">Past</option>
+</select>
+<input id="search" placeholder="Search title" />
+</div>
+</div>
+
+<ul id="events" class="events"></ul>
+<p id="empty" class="muted">No events yet</p>
+</section>
+</main>
 </body>
 </html>
